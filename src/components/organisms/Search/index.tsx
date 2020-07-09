@@ -115,8 +115,7 @@ const Search = () => {
           data-testid="suggestion-box"
         >
           {suggestions.map((value, index) => {
-            const suggestion = value.toLowerCase();
-            const splitSuggestion = suggestion.split(searchValue, 2);
+            const splitSuggestion = value.split(searchValue, 2);
             const tabIndex = index + 1;
 
             return (

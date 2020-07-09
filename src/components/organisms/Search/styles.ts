@@ -1,4 +1,15 @@
 import styled from "styled-components";
+import TextField from "components/atoms/TextField";
+
+export const Suggestions = styled.div<{ width?: string }>`
+  ${({ width }) => width && `width: ${width}`};
+  border-radius: 3px;
+  height: 250px;
+  overflow-y: auto;
+  position: absolute;
+  margin-top: 11.2em;
+  padding: 0;
+`;
 
 export const Container = styled.form`
   width: 100%;
@@ -11,16 +22,12 @@ export const Container = styled.form`
   mark {
     background: ${({ theme: { colors } }) => colors.secondary};
   }
-`;
 
-export const Suggestions = styled.div<{ width?: string }>`
-  ${({ width }) => width && `width: ${width}`};
-  border-radius: 3px;
-  height: 250px;
-  overflow-y: auto;
-  position: absolute;
-  margin-top: 11.2em;
-  padding: 0;
+  @media only screen and (max-width: 730px) {
+    ${Suggestions}, ${TextField} {
+      width: 90%;
+    }
+  }
 `;
 
 export const Suggestion = styled.div<{ focused: boolean }>`
